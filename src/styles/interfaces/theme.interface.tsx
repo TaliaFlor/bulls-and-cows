@@ -1,5 +1,5 @@
 export interface Theme {
     id: string;
-    textColor: string;
+    surface: string;
     backgroundColor: string;
 }

@@ -2,12 +2,12 @@ import {Theme} from "./interfaces/theme.interface";
 
 export const LightTheme: Theme = {
     id: "light",
-    textColor: "#000000",
+    surface: "#000000",
     backgroundColor: "#FAFAFA"
 }
 
 export const DarkTheme: Theme = {
     id: "dark",
-    textColor: "#FFFFFF",
+    surface: "#FFFFFF",
     backgroundColor: "#303030"
 }

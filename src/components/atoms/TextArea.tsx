@@ -1,5 +1,5 @@
 import {StyleSheet, TextInput} from "react-native";
-import React from "react";
+import React, {useState} from "react";
 import {BORDER} from "../../styles/constants";
 import {useTheme} from "../../contexts/ThemeContext";
 import {Theme} from "../../styles/interfaces/theme.interface";
@@ -14,21 +14,31 @@ const styles = (theme: Theme) => StyleSheet.create({
     input: {
         borderWidth: 1,
         width: '25em',
-        height: '5em',
+        // @ts-ignore:disable-next-line
         borderRadius: BORDER.radius,
-        color: theme.textColor
+        borderColor: theme.surface,
+        color: theme.surface,
+        padding: '0.75em',
+        backgroundColor: theme.backgroundColor,
     }
 });
 
 export const TextArea = (props: InputProps) => {
     const {theme} = useTheme();
 
+    const [height, setHeight] = useState(0);
+
     return (
         <TextInput
-            style={styles(theme).input}
             value={props.text}
             onChangeText={props.onChangeText}
             placeholder="Digite algo aqui..."
+            multiline
+            scrollEnabled={false}
+            textAlignVertical='top'
+            onContentSizeChange={event => setHeight(event.nativeEvent.contentSize.height)}
+            style={[styles(theme).input, {height: Math.max(100, height)}]}
+            returnKeyType='send'
         />
     );
 };
