@@ -1,21 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {TextArea} from "./src/components/atoms/TextArea";
+import {ThemeProvider, useTheme} from "./src/contexts/ThemeContext";
+import {Theme} from "./src/styles/interfaces/theme.interface";
+import {ThemeToggle} from "./src/components/atoms/ThemeToggle";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const styles = (theme: Theme) => StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: theme.backgroundColor,
+    },
+});
+
+
+function VogaisConsoantes() {
+    const [text, onChangeText] = useState<string>('');
+    const {theme} = useTheme();
+
+    return (
+        <View style={styles(theme).container}>
+            <TextArea
+                text={text}
+                onChangeText={onChangeText}
+            />
+            <ThemeToggle/>
+        </View>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+    return (
+        <ThemeProvider>
+            <VogaisConsoantes/>
+        </ThemeProvider>
+    );
+}
