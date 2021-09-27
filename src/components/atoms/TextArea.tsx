@@ -16,8 +16,8 @@ const styles = (theme: Theme) => StyleSheet.create({
         width: '25em',
         // @ts-ignore:disable-next-line
         borderRadius: BORDER.radius,
-        borderColor: theme.surface,
-        color: theme.surface,
+        borderColor: theme.surfaceColor,
+        color: theme.surfaceColor,
         padding: '0.75em',
         backgroundColor: theme.backgroundColor,
     }

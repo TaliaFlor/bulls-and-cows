@@ -1,5 +1,6 @@
 export interface Theme {
     id: string;
-    surface: string;
+    icon: any;
+    surfaceColor: string;
     backgroundColor: string;
 }

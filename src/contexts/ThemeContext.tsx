@@ -4,13 +4,11 @@ import {useColorScheme} from "react-native";
 import {Theme} from "../styles/interfaces/theme.interface";
 
 interface Context {
-    darkMode: boolean;
     theme: Theme;
     toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<Context>({
-    darkMode: false,
     theme: LightTheme,
     toggleTheme: () => {
     }
@@ -33,7 +31,6 @@ export const ThemeProvider = (props: Props) => {
     useEffect(() => setDarkMode(colorScheme === 'dark'), [colorScheme]);
 
     const currentTheme: Context = {
-        darkMode,
         theme: darkMode ? DarkTheme : LightTheme,
         toggleTheme: () => setDarkMode(!darkMode) // Overriding the scheme value will cause re-render inside the context.
     }
