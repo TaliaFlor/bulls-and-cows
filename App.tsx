@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {ThemeProvider, useTheme} from "./src/contexts/ThemeContext";
+import {DarkThemeProvider, useDarkMode} from "./src/contexts/DarkThemeContext";
 import {Theme} from "./src/styles/interfaces/theme.interface";
-import {ThemeToggle} from "./src/components/molecules/ThemeToggle";
 
 const styles = (theme: Theme) => StyleSheet.create({
     container: {
@@ -17,23 +16,24 @@ const styles = (theme: Theme) => StyleSheet.create({
 
 function VogaisConsoantes() {
     const [text, onChangeText] = useState<string>('');
-    const {theme} = useTheme();
+    const {theme} = useDarkMode();
 
     return (
         <View style={styles(theme).container}>
+            {/*<ThemeToggle/>*/}
+
             {/*<TextArea*/}
             {/*    text={text}*/}
             {/*    onChangeText={onChangeText}*/}
             {/*/>*/}
-            <ThemeToggle/>
         </View>
     );
 }
 
 export default function App() {
     return (
-        <ThemeProvider>
+        <DarkThemeProvider>
             <VogaisConsoantes/>
-        </ThemeProvider>
+        </DarkThemeProvider>
     );
 }

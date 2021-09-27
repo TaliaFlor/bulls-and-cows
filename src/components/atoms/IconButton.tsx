@@ -1,8 +1,9 @@
-import {Image, Pressable, StyleSheet} from "react-native";
+import {Image, StyleSheet, TouchableOpacity} from "react-native";
 import React from "react";
 
 type IconButtonProps = {
     source: any;
+    label: string;
     onPress: () => void;
 };
 
@@ -24,8 +25,8 @@ const styles = StyleSheet.create({
 
 export const IconButton = (props: IconButtonProps) => {
     return (
-        <Pressable style={styles.container} onPress={props.onPress}>
+        <TouchableOpacity style={styles.container} accessibilityLabel={props.label} onPress={props.onPress}>
             <Image style={styles.image} source={{uri: props.source}}/>
-        </Pressable>
+        </TouchableOpacity>
     );
 }

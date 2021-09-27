@@ -3,12 +3,12 @@ import {DarkTheme, LightTheme} from "../styles/theme";
 import {useColorScheme} from "react-native";
 import {Theme} from "../styles/interfaces/theme.interface";
 
-interface Context {
+interface ThemeContext {
     theme: Theme;
     toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<Context>({
+export const DarkThemeContext = createContext<ThemeContext>({
     theme: LightTheme,
     toggleTheme: () => {
     }
@@ -18,7 +18,7 @@ type Props = {
     children: any;
 }
 
-export const ThemeProvider = (props: Props) => {
+export const DarkThemeProvider = (props: Props) => {
     const colorScheme = useColorScheme();   // dark | light | null
 
     /*
@@ -30,17 +30,17 @@ export const ThemeProvider = (props: Props) => {
     // Listening to changes of device appearance while in runtime
     useEffect(() => setDarkMode(colorScheme === 'dark'), [colorScheme]);
 
-    const currentTheme: Context = {
+    const currentTheme: ThemeContext = {
         theme: darkMode ? DarkTheme : LightTheme,
         toggleTheme: () => setDarkMode(!darkMode) // Overriding the scheme value will cause re-render inside the context.
     }
 
     return (
-        <ThemeContext.Provider value={currentTheme}>
+        <DarkThemeContext.Provider value={currentTheme}>
             {props.children}
-        </ThemeContext.Provider>
+        </DarkThemeContext.Provider>
     );
 };
 
 // Custom hook to get the theme object returns {darkMode, theme, setTheme}
-export const useTheme = () => useContext(ThemeContext);
+export const useDarkMode = () => useContext(DarkThemeContext);

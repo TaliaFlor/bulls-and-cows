@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput} from "react-native";
 import React, {useState} from "react";
 import {BORDER} from "../../styles/constants";
-import {useTheme} from "../../contexts/ThemeContext";
+import {useDarkMode} from "../../contexts/DarkThemeContext";
 import {Theme} from "../../styles/interfaces/theme.interface";
 
 export type InputProps = {
@@ -24,7 +24,7 @@ const styles = (theme: Theme) => StyleSheet.create({
 });
 
 export const TextArea = (props: InputProps) => {
-    const {theme} = useTheme();
+    const {theme} = useDarkMode();
 
     const [height, setHeight] = useState(0);
 
