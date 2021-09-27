@@ -26,6 +26,8 @@ function VogaisConsoantes() {
             {/*    text={text}*/}
             {/*    onChangeText={onChangeText}*/}
             {/*/>*/}
+
+            {/*<ActionButton title='Adicionar' onPress={() => console.log('clicou')}/>*/}
         </View>
     );
 }
