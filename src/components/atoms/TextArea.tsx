@@ -1,6 +1,5 @@
 import {StyleSheet, TextInput} from "react-native";
 import React, {useState} from "react";
-import {BORDER} from "../../styles/constants";
 import {useDarkMode} from "../../contexts/DarkThemeContext";
 import {Theme} from "../../styles/interfaces/theme.interface";
 
@@ -16,7 +15,7 @@ const styles = (theme: Theme) => StyleSheet.create({
         borderWidth: 1,
         width: '25em',
         // @ts-ignore:disable-next-line
-        borderRadius: BORDER.radius,
+        borderRadius: '0.5em',
         borderColor: theme.id === 'dark' ? theme.surfaceShades?.darker?.one : theme.surfaceShades?.lighter?.one,
         color: theme.surfaceColor,
         padding: '0.75em',

@@ -1,14 +1,20 @@
 import {Theme} from "./interfaces/theme.interface";
 
+// === Colors ===
+
+export const PRIMARY_COLOR = "#E91E63";  // #9C27B0
+
+// === Themes ===
+
 export const LightTheme: Theme = {
     id: "light",
     name: "Modo Claro",
     icon: 'https://cdn.iconscout.com/icon/free/png-128/sun-bright-rays-sunny-weather-33960.png',
     surfaceColor: "hsl(0, 0%, 0%)",
     surfaceShades: {
-      lighter: {
-          one: "hsl(0, 0%, 30%)",
-      }
+        lighter: {
+            one: "hsl(0, 0%, 30%)",
+        }
     },
     backgroundColor: "hsl(0, 0%, 98%)",
     backgroundShades: {
@@ -24,9 +30,9 @@ export const DarkTheme: Theme = {
     icon: 'https://cdn.iconscout.com/icon/free/png-128/moon-2130761-1798529.png',
     surfaceColor: "hsl(0, 0%, 100%)",
     surfaceShades: {
-      darker: {
-          one: "hsl(0, 0%, 60%)",
-      }
+        darker: {
+            one: "hsl(0, 0%, 60%)",
+        }
     },
     backgroundColor: "hsl(0, 0%, 19%)",
     backgroundShades: {

@@ -2,7 +2,8 @@ import {StyleSheet, Text, View} from "react-native";
 import React from "react";
 import {TextArea} from "../atoms/TextArea";
 import {ActionButton} from "../atoms/ActionButton";
-import {COLORS} from "../../styles/constants";
+import {PRIMARY_COLOR} from "../../styles/theme";
+import {StrokeButton} from "../atoms/StrokeButton";
 
 type DataInputProps = {
     label: string;
@@ -11,6 +12,10 @@ type DataInputProps = {
     onChangeInput: (text: string) => void;
     buttonTitle: string;
     onPressButton: () => void;
+    buttonDisabled: boolean;
+    resetButtonTitle: string;
+    onPressResetButton: () => void;
+    resetButtonDisabled: boolean;
 };
 
 const styles = StyleSheet.create({
@@ -25,13 +30,19 @@ const styles = StyleSheet.create({
         gap: '1em',
     },
     label: {
-        color: COLORS.primary,
-        // @ts-ignore:disable-next-line
+        color: PRIMARY_COLOR,
+        // @ts-ignore
         fontSize: '1em',
     },
-    buttonContainer: {
-        alignSelf: 'flex-end'
-    }
+    buttonsContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignContent: "center",
+        // @ts-ignore
+        gap: '13.4em',
+    },
 });
 
 export const DataInput = (props: DataInputProps) => {
@@ -43,8 +54,10 @@ export const DataInput = (props: DataInputProps) => {
                 input={props.input}
                 onChangeInput={props.onChangeInput}
             />
-            <View style={styles.buttonContainer}>
-                <ActionButton title={props.buttonTitle} onPress={props.onPressButton}/>
+            <View style={styles.buttonsContainer}>
+                <StrokeButton title={props.resetButtonTitle} onPress={props.onPressResetButton}
+                              disabled={props.resetButtonDisabled}/>
+                <ActionButton title={props.buttonTitle} onPress={props.onPressButton} disabled={props.buttonDisabled}/>
             </View>
         </View>
     );

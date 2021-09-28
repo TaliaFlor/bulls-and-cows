@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from "react-native";
 import React from "react";
 import {DarkThemeToggle} from "../molecules/DarkThemeToggle";
-import {COLORS} from "../../styles/constants";
+import {PRIMARY_COLOR} from "../../styles/theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -10,9 +10,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
+        backgroundColor: PRIMARY_COLOR,
+        paddingHorizontal: '1em',
+        paddingVertical: '1.5em',
+        // @ts-ignore:disable-next-line
+        borderRadius: '0.15em'
     },
     label: {
-        color: COLORS.primary,
+        color: 'white',
         fontWeight: 'bold',
         // @ts-ignore:disable-next-line
         fontSize: '1.75em',

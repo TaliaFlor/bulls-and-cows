@@ -1,13 +1,12 @@
 import {countConsonants, countVowels} from "../utils/string.utils";
 
-export class Item {
-    number: number;
+export class ItemModel {
+    index?: number;
     value: string;
-    cod: string | undefined;
+    private cod: string = '';
 
 
-    constructor(number: number, value: string) {
-        this.number = number;
+    constructor(value: string) {
         this.value = value.trim();
     }
 
