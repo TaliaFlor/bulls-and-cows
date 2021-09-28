@@ -11,11 +11,9 @@ const ICON_SIZE = '2.5em';
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
-        justifyContent: 'center',
         width: ICON_SIZE,
         height: ICON_SIZE,
-        borderRadius: 50
+        borderRadius: 50,
     },
     image: {
         width: ICON_SIZE,
