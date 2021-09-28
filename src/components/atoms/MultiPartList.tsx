@@ -69,7 +69,7 @@ type MultiPartListProps = {
 }
 
 export const MultiPartList = (props: MultiPartListProps) => {
-    const EmptyList = () => <Row parts={['Nenhum dado...']}/>
+    const EmptyList = () => <Row parts={['Nenhum dado... 🌵 🌵 🌵']}/>
     const Header = () => <Row isHeader={true} parts={props.header}/>
 
     return (

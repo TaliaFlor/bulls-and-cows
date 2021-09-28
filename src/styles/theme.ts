@@ -2,14 +2,14 @@ import {Theme} from "./interfaces/theme.interface";
 
 // === Colors ===
 
-export const PRIMARY_COLOR = "#E91E63";  // #9C27B0
+export const PRIMARY_COLOR = "#9C27B0";
 
 // === Themes ===
 
 export const LightTheme: Theme = {
     id: "light",
     name: "Modo Claro",
-    icon: 'https://cdn.iconscout.com/icon/free/png-128/sun-bright-rays-sunny-weather-33960.png',
+    icon: require('../../assets/sun.png'),
     surfaceColor: "hsl(0, 0%, 0%)",
     surfaceShades: {
         lighter: {
@@ -27,7 +27,7 @@ export const LightTheme: Theme = {
 export const DarkTheme: Theme = {
     id: "dark",
     name: "Modo Escuro",
-    icon: 'https://cdn.iconscout.com/icon/free/png-128/moon-2130761-1798529.png',
+    icon: require('../../assets/moon.png'),
     surfaceColor: "hsl(0, 0%, 100%)",
     surfaceShades: {
         darker: {
