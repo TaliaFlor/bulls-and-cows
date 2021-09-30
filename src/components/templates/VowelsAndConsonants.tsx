@@ -52,7 +52,7 @@ export const VowelsAndConsonants = () => {
                 resetButtonDisabled={resetDisabled}
             />
 
-            <MultiPartList header={['N°', 'Texto', 'Código']} data={data}/>;
+            <MultiPartList header={['N°', 'Texto', 'Código']} data={data}/>
         </View>
     );
 };

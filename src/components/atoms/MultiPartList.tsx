@@ -44,7 +44,7 @@ type PartProps = {
 const Part = (props: PartProps) => {
     const {theme} = useDarkMode();
 
-    return <Text style={[style(theme).part, props.isHeader ? style(theme).header : null]}>{props.message}</Text>;
+    return <Text style={[style(theme).part, props.isHeader ? style(theme).header : null]}>{props.message}</Text>
 };
 
 
@@ -75,7 +75,7 @@ export const MultiPartList = (props: MultiPartListProps) => {
     return (
         <FlatList
             data={props.data}
-            renderItem={info => <Row parts={[info.index, info.item.value, info.item.code]}/>}
+            renderItem={info => <Row parts={[info.index + 1, info.item.value, info.item.code]}/>}
             extraData={props.data}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={EmptyList}

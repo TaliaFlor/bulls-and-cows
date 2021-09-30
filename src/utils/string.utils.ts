@@ -11,7 +11,7 @@ export function countVowels(str: string): number {
 }
 
 function isVowel(char: string): boolean {
-    return testChar(char, 'aeiou');
+    return testChar(char, 'aáàãâeéèêiíìîoóòõôuúùû');
 }
 
 /**
@@ -27,7 +27,7 @@ export function countConsonants(str: string): number {
 }
 
 function isConsonant(char: string): boolean {
-    return testChar(char, "bcdfghjklmnpqrstvwxyz");
+    return testChar(char, "bcçdfghjklmnpqrstvwxyz");
 }
 
 
