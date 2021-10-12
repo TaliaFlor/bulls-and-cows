@@ -69,13 +69,13 @@ type MultiPartListProps = {
 }
 
 export const MultiPartList = (props: MultiPartListProps) => {
-    const EmptyList = () => <Row parts={['Nenhum dado... 🌵 🌵 🌵']}/>
+    const EmptyList = () => <Row parts={['Nenhuma tentativa... 🎲🎲🎲']}/>
     const Header = () => <Row isHeader={true} parts={props.header}/>
 
     return (
         <FlatList
             data={props.data}
-            renderItem={info => <Row parts={[info.index + 1, info.item.value, info.item.code]}/>}
+            renderItem={info => <Row parts={[info.index + 1, info.item.guess, info.item.code]}/>}
             extraData={props.data}
             keyExtractor={(item, index) => index.toString()}
             ListEmptyComponent={EmptyList}

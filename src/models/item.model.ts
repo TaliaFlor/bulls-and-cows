@@ -1,13 +1,15 @@
-import {countConsonants, countVowels} from "../utils/string.utils";
+import {evaluateGuess} from "../utils/game.utils";
 
 export class ItemModel {
     index?: number;
-    value: string;
+    guess: number;
+    secret: number;
     private cod: string = '';
 
 
-    constructor(value: string) {
-        this.value = value.trim();
+    constructor(guess: number, secret: number) {
+        this.guess = guess;
+        this.secret = secret;
     }
 
 
@@ -19,13 +21,11 @@ export class ItemModel {
     }
 
     private generateCode(): string {
-        if (!this.value) {
-            return '0v 0c';
+        if (!this.guess) {
+            return '0B 0C';
         }
 
-        const vowels = countVowels(this.value);
-        const consonants = countConsonants(this.value);
-
-        return `${vowels}v ${consonants}c`;
+        return evaluateGuess(this.secret.toString(), this.guess.toString());
     }
+
 }

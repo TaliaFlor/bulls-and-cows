@@ -8,8 +8,8 @@ import {StrokeButton} from "../atoms/StrokeButton";
 type DataInputProps = {
     label: string;
     textPlaceholder: string;
-    input: string;
-    onChangeInput: (text: string) => void;
+    input: number;
+    onChangeInput: (guess: number) => void;
     buttonTitle: string;
     onPressButton: () => void;
     buttonDisabled: boolean;
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignContent: "center",
         // @ts-ignore
-        gap: '13.4em',
+        gap: '11.25em',
     },
 });
 

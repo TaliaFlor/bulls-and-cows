@@ -2,8 +2,8 @@ import {DataInput} from "../molecules/DataInput";
 import React from "react";
 
 type InputBarProps = {
-    input: string;
-    onChangeInput: (text: string) => void;
+    input: number;
+    onChangeInput: (guess: number) => void;
     onPressButton: () => void;
     buttonDisabled: boolean;
     onPressResetButton: () => void;
@@ -13,14 +13,14 @@ type InputBarProps = {
 export const InputSession = (props: InputBarProps) => {
     return (
         <DataInput
-            label='Avalie as Expressões'
-            textPlaceholder='Digite palavras ou frases'
+            label='Tente advinhar o código'
+            textPlaceholder='Digite sua tentativa'
             input={props.input}
             onChangeInput={props.onChangeInput}
             buttonTitle='Avaliar'
             onPressButton={props.onPressButton}
             buttonDisabled={props.buttonDisabled}
-            resetButtonTitle='Limpar'
+            resetButtonTitle='Novo Jogo'
             onPressResetButton={props.onPressResetButton}
             resetButtonDisabled={props.resetButtonDisabled}
         />

@@ -1,12 +1,12 @@
 import {StyleSheet, TextInput} from "react-native";
-import React, {useState} from "react";
+import React from "react";
 import {useDarkMode} from "../../contexts/DarkThemeContext";
 import {Theme} from "../../styles/interfaces/theme.interface";
 
 export type InputProps = {
     placeholder: string;
-    input: string;
-    onChangeInput: (text: string) => void;
+    input: number;
+    onChangeInput: (text: number) => void;
 }
 
 
@@ -14,6 +14,7 @@ const styles = (theme: Theme) => StyleSheet.create({
     input: {
         borderWidth: 1,
         width: '25em',
+        height: '3em',
         // @ts-ignore:disable-next-line
         borderRadius: '0.5em',
         borderColor: theme.id === 'dark' ? theme.surfaceShades?.darker?.one : theme.surfaceShades?.lighter?.one,
@@ -26,8 +27,7 @@ const styles = (theme: Theme) => StyleSheet.create({
 export const TextArea = (props: InputProps) => {
     const {theme} = useDarkMode();
 
-    const [height, setHeight] = useState(0);
-
+    // @ts-ignore
     return (
         <TextInput
             value={props.input}
@@ -35,9 +35,10 @@ export const TextArea = (props: InputProps) => {
             placeholder={props.placeholder}
             multiline
             scrollEnabled={false}
-            textAlignVertical='top'
-            onContentSizeChange={event => setHeight(event.nativeEvent.contentSize.height)}
-            style={[styles(theme).input, {height: Math.max(100, height)}]}
+            keyboardType="numeric"
+            maxLength={4}
+            textAlignVertical='center'
+            style={styles(theme).input}
             returnKeyType='send'
         />
     );
