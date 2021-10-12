@@ -1,11 +1,11 @@
 import React from 'react';
 import {DarkThemeProvider} from "./src/contexts/DarkThemeContext";
-import {MainPage} from "./src/components/pages/MainPage";
+import {Main} from "./src/pages/Main";
 
 export default function App() {
     return (
         <DarkThemeProvider>
-            <MainPage/>
+            <Main/>
         </DarkThemeProvider>
     );
 }

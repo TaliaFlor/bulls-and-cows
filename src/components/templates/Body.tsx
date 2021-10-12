@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export const VowelsAndConsonants = () => {
+export const Body = () => {
     const [input, setInput] = useState('');
 
     const [disabled, setDisabled] = useState(true);
